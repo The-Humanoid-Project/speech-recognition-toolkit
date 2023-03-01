@@ -66,7 +66,7 @@ def display_vals():
 
         if (pre_transcript != transcript):
             curr_t.destroy()
-            curr_t = tk.Label(root, text=transcript)
+            curr_t = tk.Label(root, text=transcript, wraplength=500, justify="center")
             curr_t.config(font=("Courier", 12))
             curr_t.pack()
             root.update()
@@ -87,7 +87,7 @@ if __name__ == "__main__":
             pass
     except KeyboardInterrupt:
         # Terminate the threads when the user interrupts the program
-        print("Program interrupted. Terminating threads...")
+        print("\nProgram interrupted. Terminating threads...")
         thread_running = False
         thread_1.join()
         thread_2.join()
